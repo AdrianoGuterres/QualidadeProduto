@@ -1,6 +1,6 @@
 package qualidade.produto.testeIntegraçao;
 
-public class CalculaIRPF {
+public class CalculadoraIRPF {
 	
 	public double calcValorIRPF(double valorBase, int diasAtraso){
 		return 0;		
