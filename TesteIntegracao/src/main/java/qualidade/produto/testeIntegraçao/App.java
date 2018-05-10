@@ -1,7 +1,9 @@
 package qualidade.produto.testeIntegraçao;
 
-public class App 
-{
+public class App {
+	private CalculadoraIRPF calculadora = new CalculadoraIRPF();
+	private FuncoesAuxiliares converter = new FuncoesAuxiliares();
+	
     public static void main( String[] args ) {
     	
     }
