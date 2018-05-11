@@ -22,44 +22,32 @@ public class App {
 
 	}
 
-	public String calculaValorEJuros(double baseCalculo, int diasAtraso) {		
-		
-		BigDecimal baseBig = new BigDecimal(baseCalculo+"");
-		
+	public String calculaValorEJuros(double baseCalculo, int diasAtraso) {	
+			
 		int meses = 0;
-		BigDecimal aPagar = new BigDecimal("0");
 
 		if(diasAtraso/30 > 0) {
 			meses = (int)diasAtraso/30;			
 		}
 		
+		double aPagar = 0;
+		double acressimo = 0;		
 
 		if(baseCalculo >= 0 && baseCalculo <= 1868.22) {	
 		}else if(baseCalculo > 1868.22 && baseCalculo <= 2799.86) {
-			aPagar = baseBig.multiply( new BigDecimal("0.075")) ;					
+			aPagar = baseCalculo*0.075 ;					
 		}else if(baseCalculo > 2799.86 && baseCalculo <= 3733.19) {
-			aPagar = baseBig.multiply( new BigDecimal("0.15"));
+			aPagar =baseCalculo*0.15;
 		}else if(baseCalculo > 3733.19 && baseCalculo <= 4664.68) {
-			aPagar = baseBig.multiply( new BigDecimal("0.225"));		
+			aPagar = baseCalculo*0.225;		
 		}else{
-			aPagar = baseBig.multiply( new BigDecimal("0.275",2,RoundingMode.UP)));		
-		}	
-		
-		
-		
+			aPagar = baseCalculo*0.275;		
+		}			
 				
 		if (meses >=1) {
-			aPagar = calculadora.calcJuros(aPagar, meses);
+			acressimo = calculadora.calcJuros(aPagar, meses);
 		} 
-		
-		
-		
-		DecimalFormat df = new DecimalFormat("#########.##");
-		
-		System.out.println(df.format(aPagar));
-		double resultado = Double.parseDouble(df.format(aPagar));		
-		
-		
-		return funcoes.formatar(resultado);
+				
+		return funcoes.formatar(acressimo+aPagar);
 	}
 }

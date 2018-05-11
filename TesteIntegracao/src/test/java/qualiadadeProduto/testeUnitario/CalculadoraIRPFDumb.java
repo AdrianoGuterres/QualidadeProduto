@@ -1,4 +1,4 @@
-package QualidadeProduto.TesteIntegracao;
+package qualiadadeProduto.testeUnitario;
 
 import qualidade.produto.testeIntegraçao.CalculadoraIRPF;
 
