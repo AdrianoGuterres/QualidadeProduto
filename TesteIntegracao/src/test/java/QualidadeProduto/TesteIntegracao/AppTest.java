@@ -2,18 +2,23 @@ package QualidadeProduto.TesteIntegracao;
 
 import static org.junit.Assert.*;
 
-import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
+import junitparams.FileParameters;
+import junitparams.JUnitParamsRunner;
 import qualidade.produto.testeIntegraçao.*;
 
+
+@RunWith(JUnitParamsRunner.class)
 public class AppTest  {
 	
 	private FuncoesAuxiliares FA;
 	private CalculadoraIRPF CA;
 	private App app;
 	
-	@After
+	@Before
 	public void setUp() {
 		 FA = new FuncoesAuxiliaresDumb();
 		 CA = new CalculadoraIRPFDumb();
@@ -21,17 +26,14 @@ public class AppTest  {
 	}
 	
 
-
-	
-
 	@Test
-	public void test() {
+	@FileParameters("src/test/listasTestes/testesParametrizadosAceitos.csv")
+	public void nunerosValidos(double valorBase, int diasAtraso, double resultado ) {		
+		
+		System.out.println(resultado +" @@@ "+ app.calculaValorEJuros(valorBase, diasAtraso ));
 		
 		
-		System.out.println(app.calculaValorEJuros(1200, 0));
-		
-		
-		assertEquals("20,50", app.calculaValorEJuros(1200, 0));
+		assertEquals(resultado, app.calculaValorEJuros(valorBase, diasAtraso ));
 	}
 
 }
