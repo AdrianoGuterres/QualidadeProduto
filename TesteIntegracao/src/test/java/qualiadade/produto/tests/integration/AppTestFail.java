@@ -42,7 +42,6 @@ public class AppTestFail {
 	@Parameter(1) 
 	public int diasAtraso;
 	
-
 	@Test(expected = Exception.class)
 	public void nunerosValidos() throws Exception {		
 		String actual =app.calculaValorEJuros(valorBase, diasAtraso);	
