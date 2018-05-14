@@ -4,11 +4,13 @@ import java.text.NumberFormat;
 
 public class FuncoesAuxiliares {
 	
+	private String saida = null;
+	
 	public String formatar(double valor) {
 		
-		String aux = NumberFormat.getCurrencyInstance().format(valor);	
+		saida = NumberFormat.getCurrencyInstance().format(valor);	
 				
-		return 	aux;
+		return 	saida;
 		
 	}
 
