@@ -1,28 +1,37 @@
 package qualidade.produto.testeIntegraçao;
 
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
-
 public class App {
 
 	private CalculadoraIRPF calculadora;
 	private FuncoesAuxiliares funcoes;
 
+	public static void main( String[] args ) {		
 
-	public App(CalculadoraIRPF calculadora, FuncoesAuxiliares funcoes) {
+	}
+
+	public CalculadoraIRPF getCalculadora() {
+		return calculadora;
+	}
+
+	public void setCalculadora(CalculadoraIRPF calculadora) {
 		this.calculadora = calculadora;
+	}
+
+	public FuncoesAuxiliares getFuncoes() {
+		return funcoes;
+	}
+
+	public void setFuncoes(FuncoesAuxiliares funcoes) {
 		this.funcoes = funcoes;
 	}
 
-	public static void main( String[] args ) {
-		App ca = new App(new CalculadoraIRPF(), new FuncoesAuxiliares());
+	public String calculaValorEJuros(double baseCalculo, int diasAtraso) throws Exception {	
 		
-		System.out.println(ca.calculaValorEJuros(4666,60));
-
-	}
-
-	public String calculaValorEJuros(double baseCalculo, int diasAtraso) {	
+		
+		if(baseCalculo < 0 || diasAtraso <0 || baseCalculo > 999999999.99) {
+			throw new Exception();			
+		}
+		
 			
 		int meses = 0;
 

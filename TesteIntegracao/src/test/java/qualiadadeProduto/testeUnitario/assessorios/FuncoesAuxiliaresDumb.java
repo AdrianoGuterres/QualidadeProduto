@@ -1,4 +1,4 @@
-package qualiadadeProduto.testeUnitario;
+package qualiadadeProduto.testeUnitario.assessorios;
 
 import qualidade.produto.testeIntegraçao.FuncoesAuxiliares;
 
