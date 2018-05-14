@@ -1,4 +1,4 @@
-package qualiadadeProduto.teste.integracao.concluidos;
+package qualiadade.produto.tests.integration;
 
 import static org.junit.Assert.assertEquals;
 
@@ -10,11 +10,11 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.*;
 
-import qualiadadeProduto.testeUnitario.assessorios.*;
-import qualidade.produto.testeIntegraçao.*;
+import qualiadade.produto.tests.ressources.*;
+import qualidade.produto.calculadora.irpf.*;
 
 @RunWith(Parameterized.class)
-public class AppVsFuncoesAuxiliaresAceitos {  
+public class AppTestFail {  
 	
 	private FuncoesAuxiliares funcoesAux;
 	private CalculadoraIRPF calculadoraIRPF;
@@ -23,25 +23,17 @@ public class AppVsFuncoesAuxiliaresAceitos {
 	@Before
 	public void setUp() {
 		 funcoesAux      = new FuncoesAuxiliares();
-		 calculadoraIRPF = new CalculadoraIRPFDumb();
+		 calculadoraIRPF = new CalculadoraIRPF();
 		 app = new AppConstrutorSobregarregado(calculadoraIRPF, funcoesAux);
 	}
 	
 	@Parameters(name= "{index} : Valor base= {0}, Dias de Atraso= {1}, Resultado= {2}")
 	public static Collection<Object[]> data(){
 		return Arrays.asList(new Object[][]{
-			{0,0,"R$ 0,00"},   			  
-			
-			{1868.23,0,"R$ 140,12"},  
-			
-			{2799.87,0,"R$ 419,98"},
-			
-			{3733.2,0,"R$ 839,97"},
-			
-			{4664.69,0,"R$ 1.282,79"},
-			
-			{999999999.99,0,"R$ 275.000.000,00"}
-			
+			{-1,0},
+			{1,-1},
+			{1000000000,0},
+			{1000000000,-1}
 		});		
 	}
 	
@@ -49,14 +41,12 @@ public class AppVsFuncoesAuxiliaresAceitos {
 	public double valorBase;
 	@Parameter(1) 
 	public int diasAtraso;
-	@Parameter(2)
-	public String expected;
 	
 
-	@Test
+	@Test(expected = Exception.class)
 	public void nunerosValidos() throws Exception {		
 		String actual =app.calculaValorEJuros(valorBase, diasAtraso);	
-		assertEquals(expected,actual);
+		
 	}
 }
 

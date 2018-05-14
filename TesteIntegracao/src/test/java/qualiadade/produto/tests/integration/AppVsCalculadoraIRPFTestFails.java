@@ -1,4 +1,4 @@
-package qualiadadeProduto.teste.integracao.concluidos;
+package qualiadade.produto.tests.integration;
 
 import static org.junit.Assert.assertEquals;
 
@@ -10,11 +10,11 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.*;
 
-import qualiadadeProduto.testeUnitario.assessorios.*;
-import qualidade.produto.testeIntegraçao.*;
+import qualiadade.produto.tests.ressources.*;
+import qualidade.produto.calculadora.irpf.*;
 
 @RunWith(Parameterized.class)
-public class AppVsCalculadoraIRPFFailsTest  {
+public class AppVsCalculadoraIRPFTestFails  {
 	
 	private FuncoesAuxiliares funcoesAux;
 	private CalculadoraIRPF calculadoraIRPF;
@@ -33,8 +33,8 @@ public class AppVsCalculadoraIRPFFailsTest  {
             {-1,0,0.00},       
             {0,-1,0.00}, 
             
-            {999999999,0,0.00},       
-            {999999999,60,0.00},   
+            {1000000000,0,0.00},       
+            {1000000000,0,0.00},   
 		});		
 	}
 	

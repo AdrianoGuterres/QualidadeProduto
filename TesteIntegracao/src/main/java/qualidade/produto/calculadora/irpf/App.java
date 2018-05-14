@@ -1,4 +1,4 @@
-package qualidade.produto.testeIntegraçao;
+package qualidade.produto.calculadora.irpf;
 
 public class App {
 

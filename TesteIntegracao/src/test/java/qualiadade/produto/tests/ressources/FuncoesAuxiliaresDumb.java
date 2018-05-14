@@ -1,6 +1,6 @@
-package qualiadadeProduto.testeUnitario.assessorios;
+package qualiadade.produto.tests.ressources;
 
-import qualidade.produto.testeIntegraçao.FuncoesAuxiliares;
+import qualidade.produto.calculadora.irpf.FuncoesAuxiliares;
 
 public class FuncoesAuxiliaresDumb extends FuncoesAuxiliares {
 

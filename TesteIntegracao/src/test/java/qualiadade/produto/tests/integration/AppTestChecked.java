@@ -1,4 +1,4 @@
-package qualiadadeProduto.teste.integracao;
+package qualiadade.produto.tests.integration;
 
 import static org.junit.Assert.assertEquals;
 
@@ -10,11 +10,11 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.*;
 
-import qualiadadeProduto.testeUnitario.assessorios.*;
-import qualidade.produto.testeIntegraçao.*;
+import qualiadade.produto.tests.ressources.*;
+import qualidade.produto.calculadora.irpf.*;
 
 @RunWith(Parameterized.class)
-public class AppTest {  
+public class AppTestChecked {  
 	
 	private FuncoesAuxiliares funcoesAux;
 	private CalculadoraIRPF calculadoraIRPF;
@@ -30,7 +30,7 @@ public class AppTest {
 	@Parameters(name= "{index} : Valor base= {0}, Dias de Atraso= {1}, Resultado= {2}")
 	public static Collection<Object[]> data(){
 		return Arrays.asList(new Object[][]{
-			{0,0,"R$ 0,00"},            {1,0,"R$ 0,00"},          {1868.22,59,"R$ 0,00"},    {1868.23,0,"R$ 140,12"},         {1868.24,0,"R$ 140,12"},
+			{0      ,0,"R$ 0,00"},      {1,0,"R$ 0,00"},          {1868.22,0,"R$ 0,00"},    {1868.23,0,"R$ 140,12"},         {1868.24,0,"R$ 140,12"},
             {2334.05,0,"R$ 175,05"},    {2799.86,0,"R$ 209,99"},  {2799.87,0,"R$ 419,98"},   {2799.88,0,"R$ 419,98"},         {3266.53,0,"R$ 489,98"},
             {3733.19,0,"R$ 559,98"},    {3733.2,0,"R$ 839,97"},   {3733.21,0,"R$ 839,97"},   {4198.94,0,"R$ 944,76"},         {4664.68,0,"R$ 1.049,55"},
             {4664.69,0,"R$ 1.282,79"},  {4664.7,0,"R$ 1.282,79"}, {5000,0,"R$ 1.375,00"},    {9999999.99,0,"R$ 2.750.000,00"},

@@ -1,6 +1,6 @@
-package qualiadadeProduto.testeUnitario.assessorios;
+package qualiadade.produto.tests.ressources;
 
-import qualidade.produto.testeIntegraçao.CalculadoraIRPF;
+import qualidade.produto.calculadora.irpf.CalculadoraIRPF;
 
 public class CalculadoraIRPFDumb extends CalculadoraIRPF {
 
